@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari_DOM</title>
+    <script type="text/javascript" src="formulariodom.js"></script>
+
+</head>
+<body>
+
+    <p id="pasotiempo"></p>
+    <p id='frase'></p>
+
+    <form id='miform' action="desti.html" method="get" name="formu1" onsubmit="return validartotal()">
+
+        Nom <input id="nom" name="nom" type="text" onBlur="validarNombre(this.value)"><p id="par1"></p><br><br>
+        Correu: <input id='correo' name="curreu" type="text" onBlur='validarmail(this.value)'><p id="par2"></p><br><br>
+        <p>Comentaris:<small>(Max. 250 caracteres)</small></p><p><small id='contador'>0 caracteres</small></p><textarea id='comen' rows="4" cols="30" maxlength="250" onkeyup='comentarios(this.value)'></textarea><p id="par3"></p><br><br>
+        <label>Gènere:
+
+			<input type="radio" name="genero" value='home'> Home
+			<input type="radio" name="genero" value='dona'> Dona
+			<input type="radio" name="genero" value='nodec' checked> No declarat
+
+        </label><br><br><br>
+            
+        <p>Professió</p>
+
+			<select type='text' id='profesion' onchange='profesion()'>
+                
+                <option value="0"></option>
+				<option value="1">Analista</option>
+				<option value="2">Programador</option>
+				<option value="3">Dissenyador</option>			
+			
+            </select><p id="par4"></p><br><br><br>
+            
+        <input type="submit" value="Envia" onsubmit="return validartotal()">
+        <input type="reset" value='borrar' onclick='return borrar()'>
+    </form>
+    
+</body>
+</html>
